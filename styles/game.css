@@ -38,9 +38,18 @@ main.game .letters .letter {
     text-transform: uppercase;
 }
 
-main.game .consumed-letters {
-    width: 100%;
+main.game .incorrect-letters {
+    width: 70%;
     height: 20%;
+
+    display: flex;
+    column-gap: 0.5vw;
+    justify-content: flex-start;
+
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(105, 105, 105);
+    text-transform: uppercase;
 }
 
 main.game .buttons-container {

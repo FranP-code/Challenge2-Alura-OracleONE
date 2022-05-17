@@ -1,6 +1,7 @@
 function gameMain() {
     //Letters append on main element
     const letters = document.querySelector("div.letters")
+    const incorrectLetters = document.querySelector("div.incorrect-letters")
     const fragment = document.createDocumentFragment()
 
     const wordsList = new WordsList()
@@ -18,6 +19,30 @@ function gameMain() {
 
     function addCorrectLetter(letter, position) {
         letters.children[position].textContent = letter
+    }
+
+    function addIncorrectLetter(letter) {
+        
+        //Check if the letter isn't on the incorrect letters's element
+        let letterAlreadyRegistered = false
+        
+        const array = Array.from(incorrectLetters.childNodes)
+        array.forEach(child => {
+            if (child.textContent === letter) {
+                letterAlreadyRegistered = true
+            }
+        })
+
+        //If it is on, return the function
+        if (letterAlreadyRegistered) {
+            return
+        }
+
+        //Else, add it to the incorrect letters element
+        const element = document.createElement("span")
+        element.textContent = letter
+
+        incorrectLetters.appendChild(element)
     }
 
     //Keyboard press event
@@ -47,6 +72,11 @@ function gameMain() {
                     }
                 })
 
+            } else {
+                //If not, check if it is on incorrect letters and add it to incorrect letters
+
+
+                addIncorrectLetter(e.key)
             }
         } else {
             console.log(false)
