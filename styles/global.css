@@ -52,24 +52,3 @@ header {
     padding: 2vh 2vw;
     color: #0A3871;
 }
-
-/* MAIN BASE */
-
-main.base {
-    
-    height: 70%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-}
-
-main.base button:nth-child(1) {
-    padding: 3vh 5vw;
-
-    border-radius: 20px;
-
-    margin-bottom: 3vh;
-}
