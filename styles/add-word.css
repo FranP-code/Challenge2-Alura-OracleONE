@@ -49,9 +49,6 @@ main.add-word .warning img {
 
 main.add-word .buttons-container {
     width: 70%;
-}
-
-main.add-word .buttons-container {
     display: flex;
     column-gap: 1vw;
 }

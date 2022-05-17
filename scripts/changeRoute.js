@@ -30,9 +30,11 @@ function changeRoute(route) {
             mainElement.innerHTML = `
                 <div class="ahorcado"></div>
                 <div class="letters"></div>
-                <button class="main">Nuevo juego</button>
-                <button onclick="changeRoute('base')">Desistir</button>
-            `
+                <div class="buttons-container">
+                    <button class="main">Nuevo juego</button>
+                    <button onclick="changeRoute('base')">Desistir</button>
+                <div>
+                `
             break;
     
         default:
