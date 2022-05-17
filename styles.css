@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-html, body {
+html, body, #root {
     height: 100%;
 }
 
@@ -32,6 +32,13 @@ button {
     user-select: none;
 }
 
+button.main {
+    border: none;
+
+    color: #fff;
+    background-color: #0A3871;
+}
+
 button:hover {
     filter: brightness(90%);
 }
@@ -46,9 +53,9 @@ header {
     color: #0A3871;
 }
 
-/* MAIN ROOT */
+/* MAIN BASE */
 
-main.root {
+main.base {
     
     height: 70%;
 
@@ -59,15 +66,10 @@ main.root {
     justify-content: center;
 }
 
-main.root button:nth-child(1) {
+main.base button:nth-child(1) {
     padding: 3vh 5vw;
 
     border-radius: 20px;
-
-    border: none;
-
-    color: #fff;
-    background-color: #0A3871;
 
     margin-bottom: 3vh;
 }
