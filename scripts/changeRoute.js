@@ -38,7 +38,7 @@ function changeRoute(route) {
                     <button class="main">Nuevo juego</button>
                     <button onclick="changeRoute('base')">Desistir</button>
                 <div>
-                `
+            `
             break;
     
         default:
@@ -48,6 +48,5 @@ function changeRoute(route) {
         }
 
     mainElement.appendChild(scriptElement)
-    
     root.replaceChildren(mainElement)
 }
