@@ -10,8 +10,23 @@ main.game {
 }
 
 main.game .ahorcado {
-    width: fit-content;
+    width: 100%;
     height: 50%;
+
+    display: flex;
+}
+
+main.game .ahorcado canvas {
+    width: 80%;
+    height: 100%;
+}
+
+main.game .ahorcado .end-game {
+    align-self: center;
+}
+
+main.game .ahorcado .end-game.loses {
+    color: rgb(252, 70, 70);
 }
 
 main.game .letters {

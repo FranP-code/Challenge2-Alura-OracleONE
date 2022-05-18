@@ -31,7 +31,7 @@ function changeRoute(route) {
 
         case "game":
             mainElement.innerHTML = `
-                <canvas class="ahorcado" width="1200" height="800"></canvas>
+                <div class="ahorcado"><canvas width="1200" height="800"></canvas></div>
                 <div class="letters"></div>
                 <div class="incorrect-letters"></div>
                 <div class="buttons-container">

@@ -46,6 +46,21 @@ function gameMain() {
         incorrectLetters.appendChild(element)
 
         hangmanDraw(array.length)
+
+        //En el caso de que el usuario complete el hangman
+        if (array.length >= 6) {
+
+            const fatherElement = document.querySelector(".ahorcado")
+
+            const element = document.createElement("p")
+            element.textContent = "¡Fin del juego!"
+            element.classList.add("end-game")
+            element.classList.add("loses")
+
+            fatherElement.appendChild(element)
+
+            return "user loses"
+        }
     }
 
     //Keyboard press event
@@ -77,7 +92,11 @@ function gameMain() {
 
             } else {
                 //If not, add it to incorrect letters
-                addIncorrectLetter(e.key)
+                const message = addIncorrectLetter(e.key)
+
+                if (message === "user loses") {
+                    window.removeEventListener("keydown", registerKey)
+                }
             }
         } else {
             console.log(false)
@@ -86,10 +105,8 @@ function gameMain() {
     window.addEventListener("keydown", registerKey)
 }
 
-gameMain()
-
 function hangmanDraw(number) {
-    const canvas = document.querySelector('canvas.ahorcado');
+    const canvas = document.querySelector('.ahorcado canvas');
     const context = canvas.getContext("2d");
     
     context.strokeStyle = '#444';
@@ -151,3 +168,5 @@ function hangmanDraw(number) {
 
     context.stroke();
 }
+
+gameMain()
