@@ -35,7 +35,7 @@ function changeRoute(route) {
                 <div class="letters"></div>
                 <div class="incorrect-letters"></div>
                 <div class="buttons-container">
-                    <button class="main">Nuevo juego</button>
+                    <button onclick="newGame()" class="main">Nuevo juego</button>
                     <button onclick="changeRoute('base')">Desistir</button>
                 <div>
             `

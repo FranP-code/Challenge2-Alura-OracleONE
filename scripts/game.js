@@ -132,13 +132,14 @@ function gameMain() {
             console.log(false)
         }
     }
-    window.addEventListener("keydown", registerKey)
+
+    window.onkeydown = registerKey
 }
 
 function hangmanDraw(number) {
     const canvas = document.querySelector('.ahorcado canvas');
     const context = canvas.getContext("2d");
-    
+
     context.strokeStyle = '#444';
     context.lineWidth = 10;
     context.beginPath();
@@ -197,6 +198,12 @@ function hangmanDraw(number) {
     }
 
     context.stroke();
+}
+
+function newGame() {
+    const root = document.querySelector("#root")
+    root.innerHTML = ""
+    changeRoute("game")
 }
 
 gameMain()
