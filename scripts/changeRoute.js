@@ -17,6 +17,7 @@ function changeRoute(route) {
         
         case "add-word": 
             mainElement.innerHTML = `
+                <div class="words-list"></div>
                 <textarea id="add-word-input" type="text" maxlength="8" placeholder="Ingrese la nueva palabra aquí"></textarea>
                 <div class="warning">
                     <img src="/img/warning.svg" alt="warning">

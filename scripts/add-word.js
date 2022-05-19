@@ -17,6 +17,7 @@ function addWordMain() {
         if (validation) {
             wordsList.addWord(input.value.trim())
             disableInput()
+            wordsListMain()
             redirectUser()
         }
 
@@ -57,4 +58,22 @@ function addWordMain() {
     }
 }
 
+function wordsListMain() {
+
+    const element = document.querySelector("main.add-word .words-list")
+    const fragment = document.createDocumentFragment()
+    const listContainer = document.createElement("ul")
+
+    //Por cada palabra, crear un elemento li con la palabra como texto
+    wordsList.words.forEach(word => {
+        const item = document.createElement("li")
+        item.textContent = word
+        listContainer.appendChild(item)
+    })
+
+    fragment.appendChild(listContainer)
+    element.replaceChildren(fragment)
+}
+
 addWordMain()
+wordsListMain()
