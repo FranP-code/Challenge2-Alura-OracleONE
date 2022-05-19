@@ -204,5 +204,3 @@ function newGame() {
     root.innerHTML = ""
     changeRoute("game")
 }
-
-gameMain()

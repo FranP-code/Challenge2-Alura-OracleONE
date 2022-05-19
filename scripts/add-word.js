@@ -74,6 +74,3 @@ function wordsListMain() {
     fragment.appendChild(listContainer)
     element.replaceChildren(fragment)
 }
-
-addWordMain()
-wordsListMain()

@@ -5,7 +5,6 @@ function changeRoute(route) {
     mainElement.classList.add(route)
 
     const scriptElement = document.createElement("script")
-    scriptElement.src = `/scripts/${route}.js`
     
     switch (route) {
         case "base": 
@@ -20,7 +19,7 @@ function changeRoute(route) {
                 <div class="words-list"></div>
                 <textarea id="add-word-input" type="text" maxlength="8" placeholder="Ingrese la nueva palabra aquí"></textarea>
                 <div class="warning">
-                    <img src="/img/warning.svg" alt="warning">
+                    <img src="img/warning.svg" alt="warning">
                     Max. 8 carácteres
                 </div>
                 <div class="buttons-container">
@@ -28,6 +27,11 @@ function changeRoute(route) {
                     <button onclick="changeRoute('base')">Cancelar</button>        
                 </div>
                 <div class="message"></div>
+            `
+
+            scriptElement.innerHTML = `
+                addWordMain()
+                wordsListMain()
             `
             break
 
@@ -41,6 +45,8 @@ function changeRoute(route) {
                     <button onclick="changeRoute('base')">Desistir</button>
                 <div>
             `
+
+            scriptElement.innerHTML = "gameMain()"
             break;
     
         default:
