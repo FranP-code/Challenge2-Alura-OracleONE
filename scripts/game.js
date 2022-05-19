@@ -93,7 +93,7 @@ function gameMain() {
 
             fatherElement.appendChild(element)
         }
-        window.removeEventListener("keydown", registerKey)
+        window.onkeydown = null
     }
 
     //Keyboard press event
@@ -103,7 +103,7 @@ function gameMain() {
         const main = document.querySelector("main")
 
         if (!main.classList.contains("game")) {
-            window.removeEventListener("keydown", registerKey)
+            window.onkeydown = null
             return
         }
 
