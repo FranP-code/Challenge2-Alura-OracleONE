@@ -56,3 +56,16 @@ main.add-word .buttons-container {
 main.add-word .buttons-container button {
     flex-grow: 1;
 }
+
+main.add-word .message {
+    margin-top: 1vh;
+    text-align: center;
+}
+
+main.add-word .message.invalid {
+    color: rgb(252, 70, 70);
+}
+
+main.add-word .message.valid {
+    color: rgb(46, 73, 194);
+}

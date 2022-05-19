@@ -4,7 +4,6 @@ function gameMain() {
     const incorrectLetters = document.querySelector("div.incorrect-letters")
     const fragment = document.createDocumentFragment()
 
-    const wordsList = new WordsList()
     const word = wordsList.getRandomWord().toLowerCase()
         
     word.split("").forEach(() => {

@@ -26,6 +26,7 @@ function changeRoute(route) {
                     <button class="main">Guardar y empezar</button>        
                     <button onclick="changeRoute('base')">Cancelar</button>        
                 </div>
+                <div class="message"></div>
             `
             break
 
