@@ -24,10 +24,15 @@ main.game .ahorcado canvas {
 }
 
 main.game .ahorcado .end-game {
+    font-weight: bold;
 }
 
 main.game .ahorcado .end-game.loses {
     color: rgb(252, 70, 70);
+}
+
+main.game .ahorcado .end-game.victory {
+    color: rgb(54, 177, 43);
 }
 
 main.game .letters {

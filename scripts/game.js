@@ -19,11 +19,31 @@ function gameMain() {
 
     function addCorrectLetter(letter, position) {
         letters.children[position].textContent = letter
+
+        //Checkear si todos los span tienen una letra en su interior
+
+        let allLetersFilled = true
+
+        const array = Array.from(letters.childNodes)
+        const expresion = /^[a-zA-Z]+$/
+
+        array.forEach(child => {
+            //En el caso en el que el texto del elemento no sea una letra, cambiar la variable
+            if(!expresion.test(child.textContent)) {
+                allLetersFilled = false
+            }
+        })
+
+
+        //En el caso de que el usuario gane...
+        if (allLetersFilled) {
+            endOfTheGame(true)
+        }
     }
 
     function addIncorrectLetter(letter) {
-        
-        //Check if the letter isn't on the incorrect letters's element
+
+        //Checkear que la letra no este en el elemento de letras incorrectas
         let letterAlreadyRegistered = false
         
         const array = Array.from(incorrectLetters.childNodes)
@@ -34,12 +54,12 @@ function gameMain() {
             }
         })
 
-        //If it is on, return the function
+        //Si lo esta, retornar la funcion
         if (letterAlreadyRegistered) {
             return
         }
 
-        //Else, add it to the incorrect letters element
+        //Si no, añadir la letra al elemento de letras incorrectas
         const element = document.createElement("span")
         element.textContent = letter
 
@@ -47,9 +67,24 @@ function gameMain() {
 
         hangmanDraw(array.length)
 
-        //En el caso de que el usuario complete el hangman
+        //En el caso de que el usuario complete el hangman, pierde
         if (array.length >= 6) {
+            endOfTheGame(false)
+        }
+    }
 
+    function endOfTheGame(victory) {
+        //Siendo victory un boolean
+        if (victory) {
+            const fatherElement = document.querySelector(".ahorcado")
+
+            const element = document.createElement("p")
+            element.textContent = "¡Ganaste!"
+            element.classList.add("end-game")
+            element.classList.add("victory")
+
+            fatherElement.appendChild(element)
+        } else {
             const fatherElement = document.querySelector(".ahorcado")
 
             const element = document.createElement("p")
@@ -58,9 +93,8 @@ function gameMain() {
             element.classList.add("loses")
 
             fatherElement.appendChild(element)
-
-            return "user loses"
         }
+        window.removeEventListener("keydown", registerKey)
     }
 
     //Keyboard press event
@@ -78,10 +112,10 @@ function gameMain() {
 
         if (expresion.test(e.key) && e.key.length === 1) {
 
-            //Normalize key
+            //Normalize la tecla
             e.key = e.key.toLowerCase()
 
-            //If key is on word, append it
+            //Si la tecla esta en la palabra, incluirla en el elemento de las letras
             if (word.includes(e.key)) {
                 
                 word.split("").forEach((letter, index) => {
@@ -91,12 +125,8 @@ function gameMain() {
                 })
 
             } else {
-                //If not, add it to incorrect letters
-                const message = addIncorrectLetter(e.key)
-
-                if (message === "user loses") {
-                    window.removeEventListener("keydown", registerKey)
-                }
+                //Si no lo esta, añadirlo a las letras incorrectas
+                addIncorrectLetter(e.key)
             }
         } else {
             console.log(false)
