@@ -2,6 +2,8 @@ main.add-word {
     width: 100%;
     height: 80%;
 
+    padding: 0 15%;
+
     display: flex;
     flex-direction: column;
 
@@ -10,7 +12,7 @@ main.add-word {
 }
 
 main.add-word .words-list {
-    width: 70%;
+    width: 100%;
     height: 20%;
     overflow-y: scroll;
 
@@ -25,7 +27,7 @@ main.add-word .words-list ul {
 }
 
 main.add-word textarea#add-word-input {
-    width: 70%;
+    width: 100%;
     height: 50%;
 
     padding: 2vh 1vw;
@@ -47,7 +49,7 @@ main.add-word textarea#add-word-input {
 }
 
 main.add-word .warning {
-    width: 70%;
+    width: 100%;
     margin: 2vh 0px;
 
     display: flex;
@@ -63,7 +65,7 @@ main.add-word .warning img {
 }
 
 main.add-word .buttons-container {
-    width: 70%;
+    width: 100%;
     display: flex;
     column-gap: 1vw;
 }
@@ -85,4 +87,16 @@ main.add-word .message.invalid {
 
 main.add-word .message.valid {
     color: rgb(46, 73, 194);
+}
+
+@media (max-width: 1024px) {
+    main.add-word {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 375px) {
+    main.add-word {
+        padding: 0 2%;
+    }
 }

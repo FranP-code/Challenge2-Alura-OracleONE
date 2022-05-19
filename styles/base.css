@@ -16,3 +16,17 @@ main.base button:nth-child(1) {
 
     margin-bottom: 3vh;
 }
+
+@media (max-width: 1024px) {
+    main.base button {
+        height: 15%;
+        width: 30%;
+    }
+}
+
+@media (max-width: 375px) {
+    main.base button {
+        height: 15%;
+        width: 70%;
+    }
+}

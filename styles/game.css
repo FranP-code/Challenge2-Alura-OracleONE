@@ -82,3 +82,37 @@ main.game .buttons-container {
 main.game .buttons-container button {
     flex-grow: 1;
 }
+
+@media (max-width: 570px) {
+
+    main.game .letters .letter {
+        font-size: 1.2em;
+
+        border-bottom-width: 1px;
+    }
+
+    main.game .letters {
+        padding: 5vh 2vw;
+    }
+
+    main.game .incorrect-letters {
+        width: 90%;
+
+        font-size: 1em;
+    }
+
+    main.game .ahorcado canvas {
+        width: 95vw;
+        height: 65vw;
+    }
+
+    main.game .buttons-container {
+        width: 90%;
+        flex-direction: column;
+        row-gap: 1vh;
+    }
+
+    main.game .buttons-container button {
+        width: 100%;
+    }
+}
